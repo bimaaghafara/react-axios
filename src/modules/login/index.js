@@ -4,14 +4,21 @@ import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Password } from 'primereact/password';
 import { classNames } from 'primereact/utils';
+import http from "src/services/http";
+import { useHistory } from "react-router-dom";
 import './index.css';
 
+const loginService = ({ email, password }) => {
+    return http.post("/a/hash-login", { email, password });
+};
+
 export const LoginPage = () => {
+    const history = useHistory();
 
     const formik = useFormik({
         initialValues: {
-            email: '',
-            password: '',
+            email: 'user_test_asset@mailinator.com',
+            password: 'VW1Gb1lYTnBZVEl3TUNFclFsSnVjbTlaUVVSemF5RT0rWUFEc2shIQ==',
         },
         validate: (data) => {
             let errors = {};
@@ -26,7 +33,16 @@ export const LoginPage = () => {
             return errors;
         },
         onSubmit: (data) => {
-            console.log(data);
+            window.setShowLoader(true);
+            loginService(data).then(res => {
+                // console.log(res);
+                history.push('/');
+                window.setShowLoader(false);
+            }).catch((error) => {
+                // console.log(error);
+                window.setShowLoader(false);
+            });
+    
         }
     });
 
