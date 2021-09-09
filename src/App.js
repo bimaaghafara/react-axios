@@ -11,6 +11,7 @@ import {
 
 // pages
 import LoginPage from "src/modules/login";
+import ProfilePage from 'src/modules/profile';
 
 // components
 import { Toast } from 'primereact/toast';
@@ -36,7 +37,6 @@ const WindowComponent = () => {
 	);
 }
 
-
 function App() {
   return (
     <div className="App">
@@ -47,7 +47,7 @@ function App() {
               <LoginPage />
             </Route>
             <Route path="/profile">
-              Profile
+              <ProfilePage />
             </Route>
             <Route path="/">
               Home

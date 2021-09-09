@@ -1,0 +1,27 @@
+.profile-page {
+    padding: 16px;
+    max-width: 768px;
+}
+
+.profile-page .p-avatar {
+    width: 90px;
+    height: 90px;
+}
+
+.profile-page .p-avatar .p-avatar-icon {
+    font-size: 60px;
+}
+
+.profile-page .account .account-title {
+    margin: 0;
+}
+.profile-page .account .account-email {
+    margin: 8px 0 12px 0;
+}
+
+.profile-page .phone-number #phoneNumberCode {
+    width: 160px;
+}
+.profile-page .phone-number #phoneNumber {
+    width: 50%;
+}

@@ -58,8 +58,13 @@ export const LoginPage = () => {
                     <h1 className="p-text-center">AssetData.io</h1>
                     <form onSubmit={formik.handleSubmit} className="p-fluid">
                         <div className="p-field">
-                            <span className="p-float-label p-input-icon-right">
-                                <i className="pi pi-envelope" />
+                            <span>
+                                <label
+                                    htmlFor="email"
+                                    className={classNames({ 'p-error': isFormFieldValid('email') })}
+                                >
+                                    Email*
+                                </label>
                                 <InputText
                                     id="email"
                                     name="email"
@@ -67,17 +72,17 @@ export const LoginPage = () => {
                                     onChange={formik.handleChange}
                                     className={classNames({ 'p-invalid': isFormFieldValid('email') })}
                                 />
-                                <label
-                                    htmlFor="email"
-                                    className={classNames({ 'p-error': isFormFieldValid('email') })}
-                                >
-                                    Email*
-                                </label>
                             </span>
                             {getFormErrorMessage('email')}
                         </div>
                         <div className="p-field">
-                            <span className="p-float-label">
+                            <span>
+                                <label
+                                    htmlFor="password"
+                                    className={classNames({ 'p-error': isFormFieldValid('password') })}
+                                >
+                                    Password*
+                                </label>
                                 <Password
                                     id="password"
                                     name="password"
@@ -87,17 +92,14 @@ export const LoginPage = () => {
                                     className={classNames({ 'p-invalid': isFormFieldValid('password') })}
                                     feedback={false}
                                 />
-                                <label
-                                    htmlFor="password"
-                                    className={classNames({ 'p-error': isFormFieldValid('password') })}
-                                >
-                                    Password*
-                                </label>
                             </span>
                             {getFormErrorMessage('password')}
                         </div>
-                        <Button type="submit" label="Submit" className="p-mt-2" />
+                        <Button type="submit" label="Signin" className="p-mt-2" />
                     </form>
+                    <div className="forgot-password-wrapper">
+                        <Button label="FORGOT PASSWORD" className="p-button-link" />
+                    </div>
                 </div>
             </div>
         </div>
