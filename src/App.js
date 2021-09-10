@@ -16,6 +16,7 @@ import ProfilePage from 'src/modules/profile';
 // components
 import { Toast } from 'primereact/toast';
 import Loader from 'src/components/loader';
+import DashboardPage from 'src/modules/dashboard';
 
 
 const WindowComponent = () => {
@@ -50,7 +51,7 @@ function App() {
               <ProfilePage />
             </Route>
             <Route path="/">
-              Home
+              <DashboardPage />
             </Route>
           </Switch>
         </Router>
